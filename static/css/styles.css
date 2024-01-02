@@ -1,0 +1,21 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+svg{
+    fill:white;
+}
+
+section{
+    min-height:83vh;
+}
+
+.poster{
+    object-fit: cover;
+
+}
+
+.provider{
+    border-radius: 50%;
+}

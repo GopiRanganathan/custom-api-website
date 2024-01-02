@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container my-3">
+        <h1 class="text-center text-danger my-2">{{title}}</h1>
+        {% if data %}
+        <h4 class="my-4">Streaming Platforms in India</h4>
+        {% if data.rent %}
+        <div class="row my-2">
+            <h5 class="my-1">Rent</h5>
+            {% for provider in data.rent %}
+            <div class="col m-3" style="max-width:250px">
+                    <div class="row g-0 align-items-center">
+                        <div class="col m-1">
+                            <img src="https://image.tmdb.org/t/p/original{{provider.logo_path}}" class="provider" alt="...">
+
+                        </div>
+                        <div class="col">
+                            <div class="card-body">
+                                <h5 class="card-title">{{provider.provider_name}}</h5>
+                              </div>
+                        </div>
+                    </div>
+                    
+               
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+        {% if data.buy %}
+
+        <div class="row my-2">
+            <h5>Buy</h5>
+            {% for provider in data.buy %}
+            <div class="col m-3" style="max-width:250px">
+                <div class="row g-0 align-items-center">
+                    <div class="col m-1">
+                        <img src="https://image.tmdb.org/t/p/original{{provider.logo_path}}" class="provider" alt="...">
+
+                    </div>
+                    <div class="col">
+                        <div class="card-body">
+                            <h5 class="card-title">{{provider.provider_name}}</h5>
+                          </div>
+                    </div>
+                </div>
+
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+        {% if data.flatrate %}
+
+        <div class="row my-2">
+            <h5>Flat Rate</h5>
+            {% for provider in data.flatrate %}
+            <div class="col m-3" style="max-width:250px">
+                <div class="row g-0 align-items-center">
+                    <div class="col m-1">
+                        <img src="https://image.tmdb.org/t/p/original{{provider.logo_path}}" class="provider" alt="...">
+
+                    </div>
+                    <div class="col">
+                        <div class="card-body">
+                            <h5 class="card-title">{{provider.provider_name}}</h5>
+                          </div>
+                    </div>
+                </div>
+
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+        {% else %}
+        <h4>No streaming platform data available</h4>
+
+{% endif %}
+
+    </div>
+{% endblock %}
